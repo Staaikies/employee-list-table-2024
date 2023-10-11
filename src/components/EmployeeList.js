@@ -52,7 +52,7 @@ function EmployeeListPage() {
   return (
     <div>
       <h1>Employee List</h1>
-      <button onClick={createPost}>Create Line</button>
+      <button onClick={createPost}>Add New Employee</button>
       <EmployeeList employees={employees} />
     </div>
   );

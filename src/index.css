@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
   border-bottom: 2px solid #B34212;
-  padding: 8px 20px;
+  padding: 14px 20px;
   box-shadow: 0 -6px 6px 4px rgba(0,0,0,0.4);
 }
 
@@ -36,7 +36,7 @@ body {
   display: inherit;
     justify-content: space-between;
   width: 40%;
-  max-width: 360px;
+  max-width: 200px;
   list-style: none;
 }
 
