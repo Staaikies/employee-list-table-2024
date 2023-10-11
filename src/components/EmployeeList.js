@@ -4,18 +4,44 @@ import axios from 'axios';
 
 const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';
 
-function EmployeeList({employees}) {
-    return (
-        <ul>
-        {Array.from(employees).map(employee => (
-            <li key={employee.id}>
-                {/* Display the employee name, be ready to route to the employee id and pass in the employee object to the link to be displayed on EmployeeDetail */}
-                <Link to={`/employee/${employee.id}`} state={{ employee: employee }} >{employee.name}</Link>
-            </li>
-        ))}
-      </ul>
+// function EmployeeTable({employees}) {
+//     return (
+//         <ul>
+//         {Array.from(employees).map(employee => (
+//             <li key={employee.id}>
+//                 {/* Display the employee name, be ready to route to the employee id and pass in the employee object to the link to be displayed on EmployeeDetail */}
+//                 <Link to={`/employee/${employee.id}`} state={{ employee: employee }} >{employee.name}</Link>
+//             </li>
+//         ))}
+//       </ul>
         
-    )
+//     )
+// }
+
+function EmployeeTable({employees}) {
+  return (
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from(employees).map(employee => (
+             
+              <tr key={employee.id}>
+                <td>{employee.id}</td>
+                <td>{employee.name}</td>
+                <td>{employee.email}</td>
+              </tr>
+              
+          ))}
+        </tbody>
+      </table>
+  )
 }
 
 function EmployeeListPage() {
@@ -50,10 +76,10 @@ function EmployeeListPage() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Employee List</h1>
-      <button onClick={createPost}>Add New Employee</button>
-      <EmployeeList employees={employees} />
+      <button onClick={createPost}>Add New Employee</button> 
+      <EmployeeTable employees={employees} />
     </div>
   );
 }
