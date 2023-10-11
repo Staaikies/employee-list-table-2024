@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
+import Footer from "./Footer";
 
 
 
@@ -22,7 +23,11 @@ const Layout = () => {
         </nav>
       </div>
 
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
+
+      <Footer />
     </>
   )
 };

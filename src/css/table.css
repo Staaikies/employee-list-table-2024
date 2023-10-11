@@ -1,0 +1,25 @@
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 16px;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.employee-table thead tr {
+    color: #FFF;
+    background-color: #333;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.employee-table thead th {
+    padding: 16px 8px;
+    border: 1px solid #000;
+}
+
+.employee-table tbody td {
+    padding: 8px;
+    border: 1px solid #333;
+}

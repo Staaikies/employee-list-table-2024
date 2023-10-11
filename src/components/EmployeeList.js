@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';
+
+
 
 // function EmployeeTable({employees}) {
 //     return (
@@ -18,34 +20,9 @@ const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees'
 //     )
 // }
 
-function EmployeeTable({employees}) {
-  return (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Array.from(employees).map(employee => (
-             
-              <tr key={employee.id}>
-                <td>{employee.id}</td>
-                <td>{employee.name}</td>
-                <td>{employee.email}</td>
-              </tr>
-              
-          ))}
-        </tbody>
-      </table>
-  )
-}
-
 function EmployeeListPage() {
   const [employees, setEmployees] = useState([]);
+  const navigate = useNavigate();
 
   // Get the dummy employee list with a catch for errors.
   useEffect(() => {
@@ -57,8 +34,16 @@ function EmployeeListPage() {
         console.error('Error fetching data:', error);
       });
   }, []);
+  
 
-  function createPost(e) {
+  const deleteEmployee = (id) => {
+    axios.delete(baseURL + '/' + id)
+      .then(() => {
+        setEmployees((prevEmployees) => prevEmployees.filter(employee => employee.id !== id));
+      })
+  }
+
+  const createEmployee = (e) => {
     e.preventDefault();
     axios 
       .post(baseURL, {
@@ -75,11 +60,36 @@ function EmployeeListPage() {
       });
   }
 
+  
+
   return (
     <div className='container'>
       <h1>Employee List</h1>
-      <button onClick={createPost}>Add New Employee</button> 
-      <EmployeeTable employees={employees} />
+      <button onClick={createEmployee}>Add New Employee</button> 
+      <table className='employee-table'>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from(employees).map(employee => (
+             
+              <tr key={employee.id}>
+                <td>{employee.id}</td>
+                <td onClick={() => navigate(`/employee/${employee.id}`, {state: employee})}>{employee.name}</td>
+                <td>{employee.email}</td>
+                <td>{employee.address}</td>
+                <td>Edit | <button onClick={() => deleteEmployee(employee.id)}>Delete</button></td>
+              </tr>
+              
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

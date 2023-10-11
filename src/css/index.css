@@ -12,16 +12,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  width: 50vw;
-  margin: 0 auto;
-  padding: 40px;
-}
-
 .u-text-status--familiar {
   color: #B34212;
 }
 
 /*== CSS Imports ==*/
+@import url('./base.css');
 @import url('./nav-bar.css');
 @import url('./table.css');
