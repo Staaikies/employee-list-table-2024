@@ -2,7 +2,8 @@
     width: 100%;
     border-collapse: collapse;
     margin: 25px auto;
-    font-size: 16px;
+    margin-bottom: 80px;
+    font-size: 14px;
     font-family: sans-serif;
     min-width: 400px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.2);
@@ -10,16 +11,25 @@
 
 .employee-table thead tr {
     color: #FFF;
-    background-color: #333;
+    background-color: #B34212;
     text-align: left;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .employee-table thead th {
     padding: 16px 8px;
-    border: 1px solid #000;
+    border: 1px solid #3F1808;
+    border-top: 0;
+}
+
+.employee-table tbody tr:nth-of-type(even) {
+    background-color: #EDEDED;
+}
+
+.employee-table tbody tr:last-of-type {
+    border-bottom: 2px solid #B34212;
 }
 
 .employee-table tbody td {
     padding: 8px;
-    border: 1px solid #333;
+    border: 1px solid #3F1808;
 }

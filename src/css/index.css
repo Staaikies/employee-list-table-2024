@@ -12,11 +12,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.u-text-status--familiar {
-  color: #B34212;
+main {
+  min-height: 86vh;
 }
+
+h1 {
+  margin: 0;
+}
+
 
 /*== CSS Imports ==*/
 @import url('./base.css');
 @import url('./nav-bar.css');
 @import url('./table.css');
+@import url('./common.css');
+@import url('./util.css');

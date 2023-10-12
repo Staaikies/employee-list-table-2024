@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import {Button, Icon} from './Common';
 
 const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';
 
@@ -41,6 +42,9 @@ function EmployeeListPage() {
       .then(() => {
         setEmployees((prevEmployees) => prevEmployees.filter(employee => employee.id !== id));
       })
+      .catch(error => {
+        console.error('Error deleting data:', error);
+      });
   }
 
   const createEmployee = (e) => {
@@ -60,12 +64,19 @@ function EmployeeListPage() {
       });
   }
 
-  
-
   return (
     <div className='container'>
-      <h1>Employee List</h1>
-      <button onClick={createEmployee}>Add New Employee</button> 
+      <div className="heading-button-row">
+        <h1>Employee List</h1>
+        <Button Props={{
+          text: "Add New Employee", 
+          style: "cta",
+          size: "default",
+          icon: "plus",
+          onClick: createEmployee
+        }} />
+      </div>
+      
       <table className='employee-table'>
         <thead>
           <tr>
@@ -84,7 +95,21 @@ function EmployeeListPage() {
                 <td onClick={() => navigate(`/employee/${employee.id}`, {state: employee})}>{employee.name}</td>
                 <td>{employee.email}</td>
                 <td>{employee.address}</td>
-                <td>Edit | <button onClick={() => deleteEmployee(employee.id)}>Delete</button></td>
+                <td>
+                  <Button Props={{
+                    text: "Edit this employee",
+                    icon: "pencil",
+                    iconOnly: true,
+                    size: "small",
+                  }}/>
+                  <Button Props={{
+                    text: "Delete this employee",
+                    icon: "trash",
+                    iconOnly: true,
+                    size: "small",
+                    onClick: () => deleteEmployee(employee.id)
+                  }}/>
+                </td>
               </tr>
               
           ))}
