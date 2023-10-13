@@ -33,3 +33,7 @@
     padding: 8px;
     border: 1px solid #3F1808;
 }
+
+.employee-table .employee-table__actions {
+    width: 140px;
+}

@@ -1,28 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import {Button, Icon} from './Common';
+import { Button } from './Common';
+import { CreateModal, UpdateModal } from './Modal';
 
 const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';
 
-
-
-// function EmployeeTable({employees}) {
-//     return (
-//         <ul>
-//         {Array.from(employees).map(employee => (
-//             <li key={employee.id}>
-//                 {/* Display the employee name, be ready to route to the employee id and pass in the employee object to the link to be displayed on EmployeeDetail */}
-//                 <Link to={`/employee/${employee.id}`} state={{ employee: employee }} >{employee.name}</Link>
-//             </li>
-//         ))}
-//       </ul>
-        
-//     )
-// }
-
 function EmployeeListPage() {
   const [employees, setEmployees] = useState([]);
+  const [createModalOpen, setCreateModal] = useState(false);
+  const [updateModalOpen, setUpdateModal] = useState(false);
+  // Selected employee state for editing and updating.
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
   const navigate = useNavigate();
 
   // Get the dummy employee list with a catch for errors.
@@ -35,26 +24,13 @@ function EmployeeListPage() {
         console.error('Error fetching data:', error);
       });
   }, []);
-  
 
-  const deleteEmployee = (id) => {
-    axios.delete(baseURL + '/' + id)
-      .then(() => {
-        setEmployees((prevEmployees) => prevEmployees.filter(employee => employee.id !== id));
-      })
-      .catch(error => {
-        console.error('Error deleting data:', error);
-      });
-  }
-
-  const createEmployee = (e) => {
-    e.preventDefault();
-    axios 
+  const createEmployee = (name, email, address) => {
+    axios
       .post(baseURL, {
-        id: 43434,
-        name: "Test Testyburger",
-        username: "TestyMcTestTest",
-        email: "abd@abc.com"
+        name,
+        email,
+        address
       })
       .then((response) => {
         setEmployees([...employees, response.data]);
@@ -64,58 +40,127 @@ function EmployeeListPage() {
       });
   }
 
+  const updateEmployee = (id, name, email, address) => {
+    axios.put(`${baseURL}/${id}`, {
+      name,
+      email,
+      address
+    })
+      .then((response) => {
+        setEmployees((prevEmployees) =>
+          prevEmployees.map((employee) =>
+            employee.id === id ? response.data : employee
+          )
+        );
+        setUpdateModal(false);
+      })
+      .catch(error => {
+        console.error('Error updating data:', error);
+      });
+  }
+
+  const deleteEmployee = (id) => {
+    axios.delete(`${baseURL}/${id}`)
+      .then(() => {
+        setEmployees((prevEmployees) => prevEmployees.filter(employee => employee.id !== id));
+      })
+      .catch(error => {
+        console.error('Error deleting data:', error);
+      });
+  }
+
+  // Handle all the Modal show/hide and set employee when editing.
+  const handleCreateModal = () => {
+    setCreateModal(!createModalOpen);
+  }
+
+  const handleEditEmployee = (employee) => {
+    setSelectedEmployee(employee);
+    setUpdateModal(true);
+  }
+
+  const handleUpdateModal = () => {
+    setUpdateModal(!updateModalOpen);
+  }
+
   return (
-    <div className='container'>
-      <div className="heading-button-row">
-        <h1>Employee List</h1>
-        <Button Props={{
-          text: "Add New Employee", 
-          style: "cta",
-          size: "default",
-          icon: "plus",
-          onClick: createEmployee
-        }} />
-      </div>
-      
-      <table className='employee-table'>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Array.from(employees).map(employee => (
-             
+    <>
+      <div className="container">
+        <div className="heading-button-row">
+          <h1 className="heading heading--large heading--flush">Employee List</h1>
+          <Button
+          text="Add New Employee"
+          onClick={handleCreateModal}
+          style="cta"
+          size="large"
+          icon="plus"
+          />
+        </div>
+
+        <table className="employee-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Array.from(employees).map(employee => (
               <tr key={employee.id}>
                 <td>{employee.id}</td>
-                <td onClick={() => navigate(`/employee/${employee.id}`, {state: employee})}>{employee.name}</td>
+                <td
+                  onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
+                >
+                  {employee.name}
+                </td>
                 <td>{employee.email}</td>
                 <td>{employee.address}</td>
-                <td>
-                  <Button Props={{
-                    text: "Edit this employee",
-                    icon: "pencil",
-                    iconOnly: true,
-                    size: "small",
-                  }}/>
-                  <Button Props={{
-                    text: "Delete this employee",
-                    icon: "trash",
-                    iconOnly: true,
-                    size: "small",
-                    onClick: () => deleteEmployee(employee.id)
-                  }}/>
+                <td className="employee-table__actions">
+                  <Button 
+                    text="View Employee"
+                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
+                    size="small"
+                    icon="search"
+                    iconOnly={true}
+                  />
+                  <Button
+                    text="Edit Employee"
+                    onClick={() => handleEditEmployee(employee)}
+                    size="small"
+                    icon="pencil"
+                    iconOnly={true}
+                  />
+                  <Button
+                    text="Delete this employee"
+                    onClick={() => deleteEmployee(employee.id)}
+                    size="small"
+                    icon="trash"
+                    iconOnly={true}
+                  />
                 </td>
               </tr>
-              
-          ))}
-        </tbody>
-      </table>
-    </div>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <CreateModal
+        show={createModalOpen}
+        handleCreateModal={handleCreateModal}
+        url={baseURL}
+        createEmployee={createEmployee}
+      />
+
+      <UpdateModal
+        show={updateModalOpen}
+        handleUpdateModal={handleUpdateModal}
+        employee={selectedEmployee}
+        updateEmployee={updateEmployee}
+      />
+    </>
   );
 }
 

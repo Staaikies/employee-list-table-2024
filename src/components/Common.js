@@ -1,29 +1,31 @@
-export const Icon = ({Props}) => {
+import React from "react"
+
+export const Icon = ({icon, color, withText}) => {
     return (
-        <i className={`glyphicon glyphicon-${Props.icon} glyphicon-${Props.color || "black"} ${Props.withText && "glyphicon--with-text"}`}></i>
+        <i className={`glyphicon glyphicon-${icon} glyphicon-${color || "black"} ${withText && "glyphicon--with-text"}`}></i>
     )
 }
 
-export const Button = ({Props}) => {
+export const Button = ({text, onClick, type, style, size, icon, iconOnly, customClass }) => {
     let iconColor
-    if (Props.style === "primary" || Props.style === "cta") {
+    if (style === "primary" || style === "cta") {
         iconColor = "white";
     } else {
         iconColor = "black";
     }
 
     return (
-        <button className={`button  button--${Props.style || "primary"}  button--${Props.size || "default"} ${Props.iconOnly && "button--icon-only"}`} onClick={Props.onClick}>
-            {Props.iconOnly && Props.icon 
+        <button type={type || "button"} className={`button  button--${style || "primary"}  button--${size || "default"} ${iconOnly && "button--icon-only"} ${customClass}`} onClick={onClick}>
+            {iconOnly && icon 
             ?
                 <>
-                    <span className="hidden-from-view">{Props.text}</span>
-                    <Icon Props={{icon: Props.icon, color: iconColor}} />
+                    <span className="hidden-from-view">{text}</span>
+                    <Icon icon={icon} color={iconColor} />
                 </>
             :
             <>
-            {Props.text}
-            {Props.icon && <Icon Props={{icon: Props.icon, color: iconColor, withText: true}} />}
+            {text}
+            {icon && <Icon icon={icon} color={iconColor} withText={true} />}
             </>}
         </button>
     )

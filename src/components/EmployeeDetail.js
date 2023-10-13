@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from 'react-router-dom';
 
-function EmployeeDetails() {
+export default function EmployeeDetails() {
     // Grab the employee object from the passed in props.
     const location = useLocation();
     const employee = location.state;
@@ -16,5 +16,3 @@ function EmployeeDetails() {
         </div>
     )
 }
-
-export default EmployeeDetails;
