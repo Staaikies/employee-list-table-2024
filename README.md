@@ -1,3 +1,8 @@
+# Skylar's Tech Assessment
+
+This was a challenging project for me as I still needed to shake off my React.js rust.
+I'm proud of the result and the only thing I missed from the assignment (as far as I'm aware) was using TypeScript. I opted not to focus on it as I still needed to come to grips with React.js again.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
