@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { Button } from './Common';
 import { CreateModal, UpdateModal } from './Modal';
 
@@ -12,7 +11,6 @@ function EmployeeListPage() {
   const [updateModalOpen, setUpdateModal] = useState(false);
   // Selected employee state for editing and updating.
   const [selectedEmployee, setSelectedEmployee] = useState(null);
-  const navigate = useNavigate();
 
   // Get the dummy employee list with a catch for errors.
   useEffect(() => {
@@ -86,7 +84,7 @@ function EmployeeListPage() {
   return (
     <>
       <div className="container">
-        <div className="heading-button-row">
+        <div className="flex-row">
           <h1 className="heading heading--large heading--flush">Employee List</h1>
           <Button
           text="Add New Employee"
@@ -111,21 +109,10 @@ function EmployeeListPage() {
             {Array.from(employees).map(employee => (
               <tr key={employee.id}>
                 <td>{employee.id}</td>
-                <td
-                  onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
-                >
-                  {employee.name}
-                </td>
+                <td>{employee.name}</td>
                 <td>{employee.email}</td>
                 <td>{employee.address}</td>
                 <td className="employee-table__actions">
-                  <Button 
-                    text="View Employee"
-                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
-                    size="small"
-                    icon="search"
-                    iconOnly={true}
-                  />
                   <Button
                     text="Edit Employee"
                     onClick={() => handleEditEmployee(employee)}

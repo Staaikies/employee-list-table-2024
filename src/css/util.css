@@ -9,8 +9,16 @@
     position: absolute;
     width: 1px;
 }
-
+.u-text-center {
+    text-align: center;
+}
 .u-text-status--familiar {
     color: #B34212;
 }
-  
+.u-block-center {
+    display: block;
+    margin: 0 auto;
+}
+.u-max-width-640 {
+    max-width: 640px;
+}

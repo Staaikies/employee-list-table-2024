@@ -1,8 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 
-
-
 const Layout = () => {
   let currentLocation = useLocation();
   console.log(currentLocation.pathname);

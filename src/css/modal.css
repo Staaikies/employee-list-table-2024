@@ -1,5 +1,4 @@
 /*  Most of this CSS is taken from elsewhere to save time.  */
-
 .employee-modal-overlay {
     position: absolute;
     top: 0;
@@ -19,7 +18,6 @@
     visibility: visible;
     opacity: 1;
 }
-
 .employee-modal {
     margin: 100px auto;
     padding: 24px;
