@@ -3,6 +3,7 @@
 A React js app that pulls data from an API. The data is randomly generated for demo purposes.
 
 Below is the default instructions for React Apps and I thought it would be helpful to leave that here.
+
 =====================================================================================
 
 # Getting Started with Create React App
