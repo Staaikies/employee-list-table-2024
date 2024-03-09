@@ -2,8 +2,9 @@
   display: flex;
     justify-content: center;
     align-items: center;
-  border-bottom: 2px solid #B34212;
+  border-bottom: 2px solid #FFF;
   padding: 14px 20px;
+  background-color: #0B132B;
   box-shadow: 0 -6px 6px 4px rgba(0,0,0,0.4);
 }
 .nav-bar {
@@ -25,7 +26,7 @@
 .nav-bar__faux-logo,
 .nav-bar__faux-logo:hover,
 .nav-bar__faux-logo:focus {
-  color: #3F1808;
+  color: #FFF;
   font-size: 24px;
   font-weight: 600;
   text-decoration: none;
@@ -33,7 +34,7 @@
 
 .nav-bar__link,
 .nav-bar__link:focus {
-  color: #3F1808;
+  color: #6EEBE9;
   font-size: 16px;
   text-decoration: none;
 }

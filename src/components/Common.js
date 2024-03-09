@@ -1,18 +1,12 @@
 import React from "react"
 
-export const Icon = ({icon, color, withText}) => {
+export const Icon = ({icon, withText}) => {
     return (
-        <i className={`glyphicon glyphicon-${icon} glyphicon-${color || "black"} ${withText && "glyphicon--with-text"}`}></i>
+        <i className={`glyphicon glyphicon-${icon} ${withText && "glyphicon--with-text"}`}></i>
     )
 }
 
 export const Button = ({text, onClick, type, style, size, icon, iconOnly, customClass }) => {
-    let iconColor
-    if (style === "primary" || style === "cta") {
-        iconColor = "white";
-    } else {
-        iconColor = "black";
-    }
 
     return (
         <button type={type || "button"} className={`button  button--${style || "primary"}  button--${size || "default"} ${iconOnly && "button--icon-only"} ${customClass}`} onClick={onClick}>
@@ -20,13 +14,13 @@ export const Button = ({text, onClick, type, style, size, icon, iconOnly, custom
             ?
                 <>
                     <span className="hidden-from-view">{text}</span>
-                    <Icon icon={icon} color={iconColor} />
+                    <Icon icon={icon} />
                 </>
             :
-            <>
-            {text}
-            {icon && <Icon icon={icon} color={iconColor} withText={true} />}
-            </>}
+                <>
+                    {text}
+                    {icon && <Icon icon={icon} withText={true} />}
+                </>}
         </button>
     )
 }

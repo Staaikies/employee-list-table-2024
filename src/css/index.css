@@ -4,7 +4,7 @@
 }
 
 body {
-  color: #3F1808;
+  color: #f3f3f3;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,7 +13,8 @@ body {
 }
 
 main {
- min-height: 87vh;
+  background-color: #0B132B;
+  min-height: 87vh;
 }
 
 h1, h2, h3 {

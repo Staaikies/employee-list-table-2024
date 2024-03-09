@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './Common';
 import { CreateModal, UpdateModal } from './Modal';
 
@@ -11,6 +12,7 @@ function EmployeeListPage() {
   const [updateModalOpen, setUpdateModal] = useState(false);
   // Selected employee state for editing and updating.
   const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const navigate = useNavigate();
 
   // Get the dummy employee list with a catch for errors.
   useEffect(() => {
@@ -89,7 +91,7 @@ function EmployeeListPage() {
           <Button
           text="Add New Employee"
           onClick={handleCreateModal}
-          style="cta"
+          style="primary"
           size="large"
           icon="plus"
           />
@@ -98,24 +100,39 @@ function EmployeeListPage() {
         <table className="employee-table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Actions</th>
+              <th>ID:</th>
+              <th>Name:</th>
+              <th>Email:</th>
+              <th>Address:</th>
+              <th>Actions:</th>
             </tr>
           </thead>
           <tbody>
             {Array.from(employees).map(employee => (
               <tr key={employee.id}>
                 <td>{employee.id}</td>
-                <td>{employee.name}</td>
+                <td>
+                  <a 
+                    className="employee-table__link"
+                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}>
+                    {employee.name} 
+                  </a>
+                </td>
                 <td>{employee.email}</td>
                 <td>{employee.address}</td>
                 <td className="employee-table__actions">
                   <Button
+                    text="View Employee"
+                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
+                    style="primary"
+                    size="small"
+                    icon="user"
+                    iconOnly={true}
+                  />
+                  <Button
                     text="Edit Employee"
                     onClick={() => handleEditEmployee(employee)}
+                    style="primary"
                     size="small"
                     icon="pencil"
                     iconOnly={true}
@@ -123,6 +140,7 @@ function EmployeeListPage() {
                   <Button
                     text="Delete this employee"
                     onClick={() => deleteEmployee(employee.id)}
+                    style="primary"
                     size="small"
                     icon="trash"
                     iconOnly={true}
