@@ -1,17 +1,9 @@
-# Skylar's Tech Assessment
+# Employee List Table (2024)
 
-This was a challenging project for me as I still needed to shake off my React.js rust.
-I'm proud of the result and the only thing I missed from the assignment (as far as I'm aware) was using TypeScript. I opted not to focus on it as I still needed to come to grips with React.js again.
-
-The most challenging part was getting the Modals to work nicely. You'll notice I created two separate ones when I really could've used one and that was because I couldn't figure out a "too many re-renders" issue when I tried to combine them.
-
-All that said, I hope this project meets your standards and I'd love to hear feedback on areas that could be improved or what I could've done better.
-
-Look forward to hearing from you and our meeting on the 17th.
--Skylar
-
+A React js app that pulls data from an API. The data is randomly generated for demo purposes.
 
 Below is the default instructions for React Apps and I thought it would be helpful to leave that here.
+=====================================================================================
 
 # Getting Started with Create React App
 
