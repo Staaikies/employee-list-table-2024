@@ -1,6 +1,6 @@
 # Employee List Table (2024)
 
-A React js app that pulls data from an API. The data is randomly generated for demo purposes.
+A React js app that pulls data from an API (mockapi.io). The data is randomly generated for demo purposes.
 
 Below is the default instructions for React Apps and I thought it would be helpful to leave that here.
 
