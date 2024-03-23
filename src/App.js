@@ -1,17 +1,19 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
-import Layout from './components/Layout';
-import EmployeeListPage from './components/EmployeeList';
-import EmployeeDetails from './components/EmployeeDetail';
-import About from './components/About';
+import PortfolioLanding from './app/portfolio/PortfolioLanding';
+import EmployeeTableLanding from './app/employee-table/EmployeeTableLanding';
+import EmployeeListPage from './app/employee-table/EmployeeList';
+import EmployeeDetails from './app/employee-table/EmployeeDetail';
+import About from './app/employee-table/About';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<EmployeeListPage />}  />
-        <Route path="/employee/:id" element={<EmployeeDetails />} />
-        <Route path="/about" element={<About />} />
+      <Route path="/" element={<PortfolioLanding />} />
+      <Route element={<EmployeeTableLanding />}>
+        <Route path="/employeetable" element={<EmployeeListPage />} />
+        <Route path="/employeetable/employee/:id" element={<EmployeeDetails />} />
+        <Route path="/employeetable/about" element={<About />} />
       </Route>
     </Routes>
   </BrowserRouter>

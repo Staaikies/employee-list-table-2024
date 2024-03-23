@@ -1,0 +1,109 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+    .hidden-from-view {
+        border: 0;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px; 
+    }
+
+    .meta-info {
+        display: block;
+        width: 100%;
+        max-width: 23.125rem;
+        margin: 0 auto;
+        margin-bottom: 0.625rem;
+        text-align: center;
+    }
+    .meta-info__item {
+        display: inline-block;
+        color: white;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .meta-info__item--dot {
+        margin: 0 0.3125rem;
+    }
+    .meta-info__item--dot-last {
+        display: none;
+    }
+    .meta-info__link {
+        color: white;
+        text-decoration: underline;
+    }
+    .meta-info__link:hover,
+    .meta-info__link:active {
+        color: #f17f3e;
+    }
+
+    .heading {
+        display: block;
+    }
+    .heading--main {
+        font-size: 5rem;
+        line-height: 1;
+        text-align: center;
+        order: 2;
+    }
+    .heading--second-main {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .heading-pretitle,
+    .heading-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/*==  Small Screen  ==*/
+@media only screen and (min-width: 400px) {
+    .meta-info__item {
+        font-size: 1.125rem;
+    }
+
+    .heading--main {
+        font-size: 6.5rem;
+    }
+
+    .heading--second-main {
+        font-size: 1.875rem;
+    }
+}
+
+/*==  Medium Screen  ==*/
+@media only screen and (min-width: 640px) {
+	.heading--main {
+        font-size: 7.5rem;
+    }
+}
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+    .meta-info {
+        max-width: none;
+    }
+
+    .meta-info__item--dot-last {
+        display: initial;
+    }
+
+    .heading--main {
+        font-size: 8.75rem;
+    }
+
+    .heading--second-main {
+        font-size: 2.5rem;
+    }
+}
+
+/*== Large Devices / Smaller ==*/
+@media only screen and (min-width: 992px) {} 
+
+/*== Large Devices / Biggest ==*/
+@media only screen and (min-width: 1200px) {} 

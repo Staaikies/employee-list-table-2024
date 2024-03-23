@@ -1,0 +1,230 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+    .button {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0;
+        padding: 1.125rem;
+    }
+    .button:hover {
+        cursor: pointer;
+    }
+
+    .button--primary {
+        color: #f17f3e;
+        background-color: #252525; 
+        border: 0.1875rem solid #f17f3e;
+        transition: .3s all ease;
+    }
+    
+    .button--primary:hover {
+        color: #252525;
+        background-color: #f17f3e;
+    }
+
+    .button--full {
+        width: 100%;
+    }
+
+    /* ==== TOGGLE BUTTON ==== */
+    .toggle-button {
+        display: block;
+            flex-grow: 1;
+        position: relative;
+        padding: 1.5rem 2.8rem 1.5rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0;
+        border: 3px solid #f17f3e;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: .3s ease all;
+    }
+    .toggle-button:first-of-type {
+        margin-bottom: .5rem;
+    }
+
+    .toggle-button__checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .toggle-button__checkmark {
+        position: absolute;
+        top: .72rem;
+        right: 1rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: #252525;
+        border: 1px solid #f17f3e;
+        border-radius: 100%;
+        transition: .3s ease all;
+    }
+
+    .toggle-button:hover {
+        color: #252525;
+        background-color: #f17f3e;
+    }
+
+    .toggle-button:hover .toggle-button__checkbox ~ .toggle-button__checkmark {
+        background-color: #f17f3e;
+        border: 1px solid #252525;
+    }
+    .toggle-button .toggle-button__checkbox:checked ~ .toggle-button__checkmark {
+        background-color: #f17f3e;
+    }
+
+    .toggle-button__checkmark:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        transition: .2s ease all;
+    }
+
+    .toggle-button .toggle-button__checkbox:checked ~ .toggle-button__checkmark:after {
+        opacity: 1;
+    }
+
+    .toggle-button .toggle-button__checkmark:after {
+        left: .5rem;
+        top: .2rem;
+        width: .25rem;
+        height: .625rem;
+        border: solid #252525;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    /* ==== CARD COMPONENT ==== */
+    .card-component {
+        position: relative;
+        margin-bottom: 0.675rem;
+        padding: 1rem 0.875rem;
+        background-color: #f3f3f3;
+        border-radius: 0.375rem;
+        transition: .2s ease all;
+    }
+    .card-component--light {
+        background-color: #f3f3f3;
+        border-bottom: 0.3rem solid #f17f3e;
+    }
+    .card-component--dark {
+        background-color: #353535;
+        border-bottom: 0.3rem solid #f3f3f3;
+    }
+
+    .card-component__copy {
+        flex-grow: 1;
+        font-size: 1rem;
+    }
+
+    .card-component__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-component__heading {
+        color: inherit;
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 400;
+        margin-left: 0.75rem;
+    }
+
+    .card-component__subtext {
+        display: block;
+        color: inherit;
+        font-size: .75rem;
+        font-weight: 600;
+    }
+
+    .card-component__image {
+        max-width: 3.25rem;
+        height: fit-content;
+        border-radius: 100%;
+    }
+
+    .card-component-controls__settings-wrapper {
+        display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        width: 100%;
+    }
+
+    /* TODO: make this automatic based on sibling logic */
+    .card-component-controls__toggle-button {
+        margin: 0 .5rem;
+    }
+
+    /* Component Colour */
+    .card-component--light .card-component__copy,
+    .card-component--light .card-component__heading {
+        color: #252525;
+    }
+    .card-component--dark .card-component__copy,
+    .card-component--dark .card-component__heading {
+        color: #f3f3f3;
+    }
+    .card-component--light .card-component__image {
+        border: .125rem solid #f17f3e;
+    }
+    .card-component--dark .card-component__image {
+        border: .125rem solid #f3f3f3;
+    }
+
+    /* Component Font */
+    .card-component--large-font .card-component__heading {
+        font-size: 1.5rem;
+    }
+    .card-component--large-font .card-component__subtext {
+        font-size: 1rem;
+    }
+    .card-component--large-font .card-component__copy {
+        font-size: 1.2rem;
+    }
+
+}
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+    .card-component-controls__settings-wrapper {
+        flex-direction: row;
+    }
+
+    .card-component__image {
+        max-width: 5rem;
+    }
+    .card-component__heading {
+        font-size: 1.4rem;
+    }
+    .card-component__subtext {
+        font-size: .9rem;
+    }
+    .card-component__copy {
+        font-size: 1.2rem;
+    }
+
+    /* Component Font */
+    .card-component--large-font .card-component__heading {
+        font-size: 1.8rem;
+    }
+    .card-component--large-font .card-component__subtext {
+        font-size: 1.2rem;
+    }
+    .card-component--large-font .card-component__copy {
+        font-size: 1.4rem;
+    }
+
+    .toggle-button:first-of-type {
+        margin-bottom: 0;
+    }
+}

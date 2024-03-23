@@ -1,0 +1,35 @@
+/*==  Tiny Screen ==*/
+@media only screen and (min-width: 0) {
+    .footer {
+        width: 100%;
+        background-color: #252525;
+        padding: 2.5rem;
+        border-top: 0.4375rem solid #f17f3e;
+        border-bottom: 0.4375rem solid #f17f3e;
+        scroll-snap-align: end;
+    }
+
+    .footer__paragraph {
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 0.625rem;
+        text-align: center;
+    }
+
+    .footer__list {
+        display: flex;
+        list-style: none;
+    }
+
+    .footer__link {
+        color: white;
+        font-size: 0.75rem;
+    }
+}
+
+/*==  Small Screen ==*/
+@media only screen and (min-width: 400px) {
+    .footer__paragraph {
+        font-size: 1.125rem;
+    }
+}

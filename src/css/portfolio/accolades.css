@@ -1,0 +1,101 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+    .accolade {
+        width: 100%;
+        max-width: 16.25rem;
+        margin: 0 auto;
+    }
+
+    .accolade__heading-wrapper {
+        display: block;
+        position: relative;
+        min-width: 11.25rem;
+        margin: 0 auto;
+        padding-bottom: 0.625rem;
+    }
+    .accolade--am .accolade__heading-wrapper {
+        padding-left: 0.625rem;
+        border-right: 0.4375rem solid #f17f3e;
+        border-bottom: 0.4375rem solid #f17f3e;
+    }
+    .accolade--do .accolade__heading-wrapper {
+        padding-right: 0.625rem;
+        align-self: center;
+        text-align: right;
+        padding-right: 0.625rem;
+        border-left: 0.4375rem solid #f17f3e;
+        border-bottom: 0.4375rem solid #f17f3e;
+    }
+    .accolade--done .accolade__heading-wrapper {
+        padding-left: 0.625rem;
+        border-right: 0.4375rem solid #f17f3e;
+        border-top: 0.4375rem solid #f17f3e;
+    }
+    .accolade--you .accolade__heading-wrapper {
+        text-align: center;
+        border-left: 0.4375rem solid #f17f3e;
+        border-right: 0.4375rem solid #f17f3e;
+        border-bottom: none;
+    }
+
+    .accolade__heading {
+        font-size: 3.4375rem;
+    }
+
+    .accolade__content-wrapper {
+        display: block;
+        position: relative;
+        min-width: 11.25rem;
+        margin: 0 auto;
+        padding: 0.625rem;
+    }
+
+    /* ==== CONTENT UNDER HEADER ==== */
+    .accolade--am .accolade__content-wrapper {
+        padding-right: 0;
+        border-left: 0.4375rem solid #f17f3e;
+    }
+    .accolade--do .accolade__content-wrapper {
+        padding-left: 0;
+        border-right: 0.4375rem solid #f17f3e;
+    }
+    .accolade--done .accolade__content-wrapper {
+        border-left: 0.4375rem solid #f17f3e;
+        border-bottom: 0.4375rem solid #f17f3e;
+    }
+    .accolade--you .accolade__content-wrapper {
+        padding-bottom: 0;
+        border-left: 0.4375rem solid #f17f3e;
+        border-right: 0.4375rem solid #f17f3e;
+    }
+
+    /* ==== CONTENT SPECIFIC ==== */
+    .accolade__paragraph {
+        color: inherit;
+        font-size: 1.125rem;
+        line-height: 1.4;
+    }
+   
+}
+
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 400px) {
+    .accolade {
+        max-width: 17.5rem;
+    }
+
+    .accolade__heading {
+        font-size: 4.375rem;
+    }
+}
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+    .accolade {
+        max-width: 30rem;
+    }
+
+    .accolade__heading {
+        font-size: 5.5rem;
+    }
+}

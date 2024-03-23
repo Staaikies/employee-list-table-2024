@@ -1,0 +1,61 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+    .form-contact {
+        max-width: 26rem;
+        margin: 0 auto; 
+    }
+    .form-field {
+        margin-bottom: 1rem;
+    }
+    .form-field:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: .2rem;
+    }
+
+    .form-input {
+        font-size: 1rem;
+        width: 100%;
+        min-height: 3rem;
+        padding: 1rem;
+        background-color: #303030;
+        border: none;
+        border-radius: .2rem;
+    }
+    .form-input:focus,
+    .form-input:focus-visible {
+        border: none;
+        outline: none;
+        background-color: #505050;
+        transition: .3s all ease;
+    }
+
+    .form-textarea {
+        font-size: 1rem;
+        width: 100%;
+        min-height: 5rem;
+        padding: 0.625rem;
+        background-color: #303030;
+        border: none;
+        border-radius: 2px;
+        transition: .3s all ease;
+    }
+    .form-textarea:focus,
+    .form-textarea:focus-visible {
+        border: none;
+        outline: none;
+        background-color: #505050;
+    }
+
+    .form-button {
+        text-align: left;
+        width: 100%;
+        margin-top: 0.625rem;
+        height: 3.75rem;
+    }
+}
