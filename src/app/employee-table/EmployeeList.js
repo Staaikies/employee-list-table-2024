@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Button } from './Common';
+import { Button } from './Components';
 import { CreateModal, UpdateModal } from './Modal';
 
 const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';

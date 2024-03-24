@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Common';
+import { Button } from './Components';
 
 export const CreateModal = ({show, handleCreateModal, createEmployee}) => {
     const [name, setName] = useState('');

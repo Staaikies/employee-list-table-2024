@@ -1,10 +1,9 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
-import '../../css/portfolio/style.css';
 
 const PortfolioLanding = () => {
 
   return (
-    <>
+    <div className="portfolio-wrapper">
       <header className="header  section  section--bordered">
             <span className="meta-info">
                 <span className="meta-info__item">Skylar Dryden</span> 
@@ -127,7 +126,7 @@ const PortfolioLanding = () => {
                 <span className="meta-info__item"><a href="https://github.com/Staaikies" target="_blank" className="meta-info__link">Github Projects</a></span>
             </span>
         </footer>
-    </>
+    </div>
   )
 };
 

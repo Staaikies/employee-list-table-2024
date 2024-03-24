@@ -1,0 +1,125 @@
+@media only screen and (min-width: 0) {
+    .button {
+        border-width: 0.1875rem;
+        border-style: solid;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0;
+        padding: 1.125rem;
+        transition: .3s ease all;
+    }
+    .button:hover {
+        cursor: pointer;
+    }
+    .button--full {
+        width: 100%;
+    }
+    .button--icon-only {
+        background-color: transparent;
+        font-size: 1rem;
+        box-shadow: none;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 100%;
+        transition: .2s ease all;
+    }
+    
+    /*=== Specific Button Colours ===*/
+    .portfolio-wrapper .button--primary {
+        color: #F17F3E;
+        border-color: #F17F3E;
+        background-color: #252525;
+    }
+    .portfolio-wrapper .button--primary:hover {
+        color: #252525;
+        background-color: #F17F3E;
+    } 
+
+    .employeetable-wrapper .button--primary {
+        color: #6EEBE9;
+        border-color: #6EEBE9;
+        background-color: #0B132B;
+    }
+    .employeetable-wrapper .button--primary:hover {
+        color: #0B132B;
+        background-color: #6EEBE9;
+    }
+    
+    /* ==== TOGGLE BUTTON ==== */
+    .toggle-button {
+        display: block;
+            flex-grow: 1;
+        position: relative;
+        padding: 1.5rem 2.8rem 1.5rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 0;
+        border: 3px solid #f17f3e;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: .3s ease all;
+    }
+    .toggle-button:first-of-type {
+        margin-bottom: .5rem;
+    }
+    
+    .toggle-button__checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    .toggle-button__checkmark {
+        position: absolute;
+        top: .72rem;
+        right: 1rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: #252525;
+        border: 1px solid #f17f3e;
+        border-radius: 100%;
+        transition: .3s ease all;
+    }
+    
+    .toggle-button:hover {
+        color: #252525;
+        background-color: #f17f3e;
+    }
+    
+    .toggle-button:hover .toggle-button__checkbox ~ .toggle-button__checkmark {
+        background-color: #f17f3e;
+        border: 1px solid #252525;
+    }
+    .toggle-button .toggle-button__checkbox:checked ~ .toggle-button__checkmark {
+        background-color: #f17f3e;
+    }
+    
+    .toggle-button__checkmark:after {
+        content: "";
+        position: absolute;
+        opacity: 0;
+        transition: .2s ease all;
+    }
+    
+    .toggle-button .toggle-button__checkbox:checked ~ .toggle-button__checkmark:after {
+        opacity: 1;
+    }
+    
+    .toggle-button .toggle-button__checkmark:after {
+        left: .5rem;
+        top: .2rem;
+        width: .25rem;
+        height: .625rem;
+        border: solid #252525;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+

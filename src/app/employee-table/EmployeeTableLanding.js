@@ -6,7 +6,7 @@ const Layout = () => {
   console.log(currentLocation.pathname);
 
   return (
-    <>
+    <div className="employeetable-wrapper">
       <div className="nav-bar-wrapper">
         <nav className="nav-bar">
           <Link className="nav-bar__faux-logo" to="/employeetable">Employee List <span className="u-text-status--familiar">Solutions</span></Link>
@@ -29,7 +29,7 @@ const Layout = () => {
       </main>
 
       <Footer />
-    </>
+    </div>
   )
 };
 

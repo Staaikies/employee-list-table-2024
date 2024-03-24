@@ -1,0 +1,23 @@
+.flex-row {
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+    width: 100%;
+}
+.glyphicon--with-text {
+    margin-left: 8px;
+}
+
+.image {
+    width: 250px;
+    height: auto;
+    border: 4px solid #6EEBE9;
+    border-radius: 100%;
+    margin: 20px 0;
+}
+
+
+/*== CSS Imports ==*/
+@import url('./nav-bar.css');
+@import url('./table.css');
+@import url('./modal.css');

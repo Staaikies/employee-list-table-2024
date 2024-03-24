@@ -1,17 +1,20 @@
 /*==  BASE STYLES  ==*/
 html {
     font-size: 16px;
+}
+html:has(div.portfolio-wrapper) {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
+
 * {
-   
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #f17f3e;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 h1, h2, h3, h4 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
