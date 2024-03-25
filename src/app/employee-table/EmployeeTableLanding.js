@@ -12,19 +12,13 @@ const Layout = () => {
           <Link className="nav-bar__faux-logo" to="/employeetable">Employee List <span className="u-text-status--familiar">Solutions</span></Link>
           <ul className="nav-bar__list">
             <li>
-              <Link className={`nav-bar__link`} to="/">Portfolio</Link>
-            </li>
-            <li>
-              <Link className={`nav-bar__link  ${currentLocation.pathname === '/employeetable' && 'nav-bar__link--active'}`} to="/">Employee List</Link>
-            </li>
-            <li>
-              <Link className={`nav-bar__link  ${currentLocation.pathname === '/about' && 'nav-bar__link--active'}`} to="/about">About</Link>
+              <Link className={`nav-bar__link`} to="/">Back to Portfolio</Link>
             </li>
           </ul>
         </nav>
       </div>
 
-      <main>
+      <main className="content content--employeetable">
         <Outlet />
       </main>
 

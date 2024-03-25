@@ -1,3 +1,8 @@
+.portfolio-wrapper {
+    color: #F17F3E;
+    background-color: #252525;
+}
+
 @import url('landing.css');
 @import url('accolades.css');
 @import url('components.css');

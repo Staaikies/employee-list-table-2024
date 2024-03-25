@@ -28,10 +28,6 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     position: relative;
 }
-.employee-modal .content {
-    max-height: 400px;
-    overflow: auto;
-}
 .employee-modal p {
     margin: 0 0 1em;
     text-align: center;

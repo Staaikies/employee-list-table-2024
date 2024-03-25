@@ -16,6 +16,12 @@
     margin: 20px 0;
 }
 
+.employeetable-wrapper {
+    color: #FFF;
+    background-color: #0B132B;
+    min-height: 100vh;
+}
+
 
 /*== CSS Imports ==*/
 @import url('./nav-bar.css');

@@ -2,8 +2,8 @@
   display: flex;
     justify-content: center;
     align-items: center;
-  border-bottom: 2px solid #FFF;
-  padding: 14px 20px;
+  border-bottom: 0.4375rem solid #FFF;
+  padding: 1.5rem;
   background-color: #0B132B;
   box-shadow: 0 -6px 6px 4px rgba(0,0,0,0.4);
 }
@@ -17,8 +17,6 @@
 .nav-bar__list {
   display: inherit;
     justify-content: space-between;
-  width: 40%;
-  max-width: 200px;
   margin: 0;
   list-style: none;
 }
