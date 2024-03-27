@@ -18,38 +18,28 @@
         padding: .2rem;
     }
 
-    .form-input {
-        font-size: 1rem;
-        width: 100%;
-        min-height: 3rem;
-        padding: 1rem;
-        background-color: #303030;
-        border: none;
-        border-radius: .2rem;
-    }
-    .form-input:focus,
-    .form-input:focus-visible {
-        border: none;
-        outline: none;
-        background-color: #505050;
-        transition: .3s all ease;
-    }
-
+    .form-input,
     .form-textarea {
         font-size: 1rem;
         width: 100%;
-        min-height: 5rem;
-        padding: 0.625rem;
-        background-color: #303030;
         border: none;
-        border-radius: 2px;
+        border-radius: .2rem;
         transition: .3s all ease;
     }
+    .form-input {
+        min-height: 3rem;
+        padding: 1rem;
+    }
+    .form-textarea {
+        min-height: 5rem;
+        padding: 0.625rem;
+    }
+    .form-input:focus,
+    .form-input:focus-visible,
     .form-textarea:focus,
     .form-textarea:focus-visible {
         border: none;
         outline: none;
-        background-color: #505050;
     }
 
     .form-button {
@@ -57,5 +47,17 @@
         width: 100%;
         margin-top: 0.625rem;
         height: 3.75rem;
+    }
+
+    /*=== Specifc Colour Styling ===*/
+    .portfolio-wrapper .form-input,
+    .portfolio-wrapper .form-textarea {
+        background-color: #303030;
+    }
+    .portfolio-wrapper .form-input:focus,
+    .portfolio-wrapper .form-input:focus-visible,
+    .portfolio-wrapper .form-textarea:focus,
+    .portfolio-wrapper .form-textarea:focus-visible {
+        background-color: #505050;
     }
 }

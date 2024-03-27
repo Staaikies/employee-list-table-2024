@@ -18,8 +18,7 @@
         background-color: transparent;
         font-size: 1rem;
         box-shadow: none;
-        padding: 0.75rem;
-        border: none;
+        padding: 0.9rem;
         border-radius: 100%;
         transition: .2s ease all;
     }
@@ -43,6 +42,16 @@
     .employeetable-wrapper .button--primary:hover {
         color: #0B132B;
         background-color: #6EEBE9;
+    }
+    .employeetable-wrapper .button--primary-reversed {
+        color: #0B132B;
+        background-color: #FFF;
+        border: 1px solid #0B132B; 
+    }
+    .employeetable-wrapper .button--primary-reversed:hover {
+        color: #FFF;
+        background-color: #0B132B;
+        border: 1px solid #0B132B; 
     }
     
     /* ==== TOGGLE BUTTON ==== */

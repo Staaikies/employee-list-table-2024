@@ -19,14 +19,22 @@
     opacity: 1;
 }
 .employee-modal {
-    margin: 100px auto;
-    padding: 24px;
+    color: #0B132B;
+    margin: 8rem auto;
     background: #fff;
-    border: 1px solid #666;
+    border: 1px solid #FFF;
     width: 400px;
-    border-radius: 4px;
+    border-radius: 2px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     position: relative;
+}
+.employee-modal__heading-wrapper {
+    padding: 1rem 2rem;
+}
+.employee-modal__content {
+    color: #FFF;
+    background-color: #0B132B;
+    padding: 1.4rem;
 }
 .employee-modal p {
     margin: 0 0 1em;

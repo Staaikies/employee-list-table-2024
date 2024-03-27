@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Components';
+import { Button } from '../common/Components';
 
 export const CreateModal = ({show, handleCreateModal, createEmployee}) => {
     const [name, setName] = useState('');
@@ -19,28 +19,31 @@ export const CreateModal = ({show, handleCreateModal, createEmployee}) => {
         <>
             {show && 
                 <div className="employee-modal-overlay">
-                <a className="modal-outside-close" onClick={handleCreateModal}></a>
-                <div className="employee-modal">
-                    <Button text="Close Modal" onClick={handleCreateModal} icon="remove" iconOnly={true} customClass="employee-modal__close" />
-                    <h3 className="heading heading--default">Create New Employee</h3>
-                    <form onSubmit={handleSubmit} className="form">
-                        <div className="form-field">
-                            <label className="form-label">Full name:</label>
-                            <input placeholder="Name" className="form-input" onChange={(e) => setName(e.target.value)} />
+                    <a className="modal-outside-close" onClick={handleCreateModal}></a>
+                    <div className="employee-modal">
+                        <div className="employee-modal__heading-wrapper">
+                            <Button text="Close Modal" onClick={handleCreateModal} style="primary-reversed" icon="remove" iconOnly={true} customClass="employee-modal__close" />
+                            <h3 className="heading heading--default">Create New Employee</h3>
                         </div>
-                        <div className="form-field">
-                            <label  className="form-label">Email:</label>
-                            <input placeholder="Email" className="form-input" onChange={(e) => setEmail(e.target.value)} />
+                        <div className="employee-modal__content">
+                            <form onSubmit={handleSubmit} className="form">
+                                <div className="form-field">
+                                    <label className="form-label">Full name:</label>
+                                    <input placeholder="Name" className="form-input" onChange={(e) => setName(e.target.value)} />
+                                </div>
+                                <div className="form-field">
+                                    <label  className="form-label">Email:</label>
+                                    <input placeholder="Email" className="form-input" onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className="form-field">
+                                    <label  className="form-label">Address:</label>
+                                    <textarea placeholder="123 Jon Doe Rd ..." className="form-textarea" onChange={(e) => setAddress(e.target.value)} />
+                                </div>
+                                <Button text="Create" type="submit" style="primary" size="default" />
+                            </form>
                         </div>
-                        <div className="form-field">
-                            <label  className="form-label">Address:</label>
-                            <textarea placeholder="123 Jon Doe Rd ..." className="form-textarea" onChange={(e) => setAddress(e.target.value)} />
-                        </div>
-                        <Button text="Create" type="submit" style="primary" size="default" />
-                    </form>
-                    
+                    </div>
                 </div>
-              </div>
             }
         </>
     )

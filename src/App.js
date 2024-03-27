@@ -5,17 +5,17 @@ import EmployeeListPage from './app/employee-table/EmployeeList';
 import EmployeeDetails from './app/employee-table/EmployeeDetail';
 
 function App() {
-  return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<PortfolioLanding />} />
-      <Route element={<EmployeeTableLanding />}>
-        <Route path="/employeetable" element={<EmployeeListPage />} />
-        <Route path="/employeetable/employee/:id" element={<EmployeeDetails />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<PortfolioLanding />} />
+                    <Route element={<EmployeeTableLanding />}>
+                    <Route path="/employeetable" element={<EmployeeListPage />} />
+                    <Route path="/employeetable/employee/:id" element={<EmployeeDetails />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

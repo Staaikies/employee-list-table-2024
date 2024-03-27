@@ -6,7 +6,7 @@ export const Icon = ({icon, withText}) => {
     )
 }
 
-export const Button = ({text, onClick, type, style, size, icon, iconOnly, customClass }) => {
+export const Button = ({text, onClick, type, style, size, icon, iconOnly, customClass}) => {
 
     return (
         <button type={type || "button"} className={`button  button--${style || "primary"}  button--${size || "default"} ${iconOnly && "button--icon-only"} ${customClass}`} onClick={onClick}>
