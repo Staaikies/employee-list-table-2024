@@ -7,12 +7,14 @@ export default function EmployeeDetails() {
     const employee = location.state;
 
     return (
-        <div>
-            <h1>{employee.name}'s Profile</h1>
-            {/* <input type="text" value={employee.name} /> */}
-            <img src={employee.profilepicture} />
-            <p>{employee.name}</p>
-            {console.log({employee})}
+        <div className="employeetable-wrapper">
+            <div className="container">
+                <h1>{employee.name}'s Profile</h1>
+                {/* <input type="text" value={employee.name} /> */}
+                <img src={employee.profilepicture} />
+                <p>{employee.name}</p>
+                {console.log({employee})}
+            </div>
         </div>
     )
 }

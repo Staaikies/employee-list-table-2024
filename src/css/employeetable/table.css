@@ -54,6 +54,10 @@
     text-decoration: underline;
 }
 
+.employee-table .employee-table__actions-td {
+    width: 11rem; 
+}
 .employee-table .employee-table__actions {
-    width: 140px;
+    display: flex;
+    justify-content: space-between;
 }

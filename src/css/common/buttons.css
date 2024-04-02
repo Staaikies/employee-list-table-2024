@@ -14,9 +14,15 @@
     .button--full {
         width: 100%;
     }
+    .button--default {
+        width: 5rem;
+        padding: 1.5rem 2rem;
+    }
+
     .button--icon-only {
         background-color: transparent;
         font-size: 1rem;
+        border: 1px solid;
         box-shadow: none;
         padding: 0.9rem;
         border-radius: 100%;
@@ -35,13 +41,13 @@
     } 
 
     .employeetable-wrapper .button--primary {
-        color: #6EEBE9;
-        border-color: #6EEBE9;
+        color: #FFF;
+        border-color: #FFF;
         background-color: #0B132B;
     }
     .employeetable-wrapper .button--primary:hover {
         color: #0B132B;
-        background-color: #6EEBE9;
+        background-color: #FFF;
     }
     .employeetable-wrapper .button--primary-reversed {
         color: #0B132B;

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../common/Components';
 import { CreateModal, UpdateModal } from './Modal';
 
-const baseURL = 'https://6524183bea560a22a4e96944.mockapi.io/fakeData/Employees';
+const baseURL = 'https://660c235a3a0766e85dbd8186.mockapi.io/fakeData/Employees/EmployeeTable';
 
 function EmployeeListPage() {
   const [employees, setEmployees] = useState([]);
@@ -114,37 +114,39 @@ function EmployeeListPage() {
                 <td>
                   <a 
                     className="employee-table__link"
-                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}>
+                    onClick={() => navigate(`/employeetable/employee/${employee.id}`, { state: employee })}>
                     {employee.name} 
                   </a>
                 </td>
                 <td>{employee.email}</td>
                 <td>{employee.address}</td>
-                <td className="employee-table__actions">
-                  <Button
-                    text="View Employee"
-                    onClick={() => navigate(`/employee/${employee.id}`, { state: employee })}
-                    style="primary"
-                    size="small"
-                    icon="user"
-                    iconOnly={true}
-                  />
-                  <Button
-                    text="Edit Employee"
-                    onClick={() => handleEditEmployee(employee)}
-                    style="primary"
-                    size="small"
-                    icon="pencil"
-                    iconOnly={true}
-                  />
-                  <Button
-                    text="Delete this employee"
-                    onClick={() => deleteEmployee(employee.id)}
-                    style="primary"
-                    size="small"
-                    icon="trash"
-                    iconOnly={true}
-                  />
+                <td className="employee-table__actions-td">
+                  <div className="employee-table__actions">
+                    <Button
+                      text="View Employee"
+                      onClick={() => navigate(`/employeetable/employee/${employee.id}`, { state: employee })}
+                      style="primary"
+                      size="small"
+                      icon="user"
+                      iconOnly={true}
+                    />
+                    <Button
+                      text="Edit Employee"
+                      onClick={() => handleEditEmployee(employee)}
+                      style="primary"
+                      size="small"
+                      icon="pencil"
+                      iconOnly={true}
+                    />
+                    <Button
+                      text="Delete this employee"
+                      onClick={() => deleteEmployee(employee.id)}
+                      style="primary"
+                      size="small"
+                      icon="fire"
+                      iconOnly={true}
+                    />
+                  </div>
                 </td>
               </tr>
             ))}
