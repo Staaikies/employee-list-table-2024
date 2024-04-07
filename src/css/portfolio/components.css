@@ -98,7 +98,7 @@
     }
 
     .card-component__image {
-        max-width: 5rem;
+        max-width: 4rem;
     }
     .card-component__heading {
         font-size: 1.4rem;

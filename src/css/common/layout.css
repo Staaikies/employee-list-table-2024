@@ -67,6 +67,13 @@
         color: white;
         font-size: 0.75rem;
     }
+
+    .flex-row {
+        display: flex;
+            justify-content: space-between;
+            align-items: center;
+        width: 100%;
+    }
 }
 
 /*==  Small Screen ==*/

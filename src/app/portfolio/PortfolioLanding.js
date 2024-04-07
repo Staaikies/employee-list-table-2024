@@ -1,4 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
+import { Button } from "../common/Components";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import PortfolioImage from "../../assets/portfolio_image.jpeg";
 
 const PortfolioLanding = () => {
 
@@ -14,7 +17,13 @@ const PortfolioLanding = () => {
             </span>
             <div className="landing-banner">
                 <h1 className="heading heading--main">hello</h1>
-                <img src="assets/portfolio_image.jpeg" className="landing-banner__photo" />
+                <LazyLoadImage 
+                    src={PortfolioImage} 
+                    width="100%"
+                    alt="Testing"    
+                    effect="blur"
+                    wrapperClassName="image  image--circle  image--bordered  landing-banner__photo"
+                />
             </div>
             <h2 className="heading heading--second-main">Welcome to my website</h2>
         </header>
@@ -38,7 +47,12 @@ const PortfolioLanding = () => {
                         
                         <div className="card-component  card-component--light">
                             <div className="card-component__header">
-                                <img src="assets/portfolio_image.jpeg" className="card-component__image" />
+                                <LazyLoadImage 
+                                    src={PortfolioImage}
+                                    width="100%"
+                                    alt="Skylar Dryden"
+                                    wrapperClassName="image  image--circle  image--bordered  card-component__image"
+                                />
                                 <h3 className="card-component__heading">Skylar Dryden <span className="card-component__subtext">57k followers</span></h3>
                             </div>
                             <p className="card-component__copy">This card is dynamic and responsive! Feel free to play around with the settings to test it.</p>
@@ -109,9 +123,7 @@ const PortfolioLanding = () => {
                                 <label className="form-label">Message:</label>
                                 <textarea id="message" name="message" className="form-textarea" required></textarea>
                             </div>
-                            <div className="form-control">
-                                <button className="button button--primary form-button">Contact me</button>
-                            </div>
+                            <Button text="Contact me" style="primary" customClass="form-button" />
                         </form>
                     </div>
                 </div>

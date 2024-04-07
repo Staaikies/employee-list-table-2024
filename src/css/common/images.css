@@ -1,0 +1,41 @@
+/*==  Tiny Screen  ==*/
+@media only screen and (min-width: 0) {
+    .image {
+        width: 100%;
+        height: fit-content;
+        margin: 0.875rem 0;
+    }
+    .image--bordered {
+        border: 0.4375rem solid #f17f3e;
+    }
+    .image--circle {
+        overflow: hidden;
+        border-radius: 100%;
+    }
+
+    .landing-banner__photo {
+        order: 1;
+        max-width: 15rem;
+    }
+}
+
+/*==  Small Mobile Screen  ==*/
+@media only screen and (min-width: 400px) {
+    .landing-banner__photo {
+        max-width: 17.5rem;
+    }
+}
+
+/*== Medium Mobile Screen ==*/
+@media only screen and (min-width: 640px) {
+    .landing-banner__photo {
+        max-width: 20rem;
+    }
+}
+
+/*== Landscape Tablets / Small Desktop Browser Window ==*/
+@media only screen and (min-width: 768px) {
+    .landing-banner__photo {
+        max-width: 17.5rem;
+    }
+}
