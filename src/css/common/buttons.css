@@ -16,7 +16,7 @@
     }
     .button--default {
         width: 5rem;
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 1rem;
     }
 
     .button--icon-only {
@@ -127,9 +127,9 @@
     
     .toggle-button .toggle-button__checkmark:after {
         left: .5rem;
-        top: .2rem;
-        width: .25rem;
-        height: .625rem;
+        top: .35rem;
+        width: .35rem;
+        height: .7rem;
         border: solid #252525;
         border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
